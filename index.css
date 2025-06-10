@@ -28,6 +28,8 @@ body {
   background: var(--color-accent);
   max-width: 380px;
   width: 100%;
+  min-height: 300px;
+  max-height: 600px;
   padding: 30px 25px;
   border-radius: 12px;
   box-shadow: 0 6px 15px var(--color-accent);
@@ -41,49 +43,48 @@ body {
 }
 
 .buttonMain {
-    background-color: var(--color-accent2);
-    height: 50px;
-    width: 50px;
-    border-radius: 25px;
-    margin-top: 30%;
-    margin-left: calc(50% - 25px);
-    border: none;
-    color: var(--color-text);
-    box-shadow: var(--color-accent2) 0px 0px 10px;
-    transition: 0.3s;
+  position: absolute;
+  background-color: var(--color-accent);
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  bottom: 20%;
+  border: none;
+  color: var(--color-text);
+  box-shadow: var(--color-accent) 0px 0px 10px;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .buttonMain img {
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     color: var(--color-text);
-    margin-top: 10px;
-    transform: rotate(180deg));
+    transform: rotate(180deg) translate(-50%, -50%);
 }
 
 .buttonMain.active {
-  transform: translateY(+120px);
-  margin-top: 5%;
+  transform: rotate(180deg);
 }
 
 .avatar-bg {
+  position: absolute;
   width: 180px;
   height: 180px;
-  border-radius: 90px 90px 20px 20px;
+  border-radius: 90px;
   background: var(--color-accent);
   padding: 20px;
-  margin: 0 auto 30px;
+  top: 30%;
   transition: 0.3s;
 }
 
 .avatar-bg h1 {
   font-size: 1.5rem;
   color: var(--color-text);
-  margin-bottom: 15px;
   transition: 0.3s;
   background-color: var(--color-accent);
   padding: 10px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
   box-shadow: var(--color-accent) 0 0 15px;
   z-index: 0;
 }
@@ -93,7 +94,7 @@ body {
 }
 
 .avatar-bg.active h1 {
-  transform: translateY(+230px);
+  transform: translateY(+260px);
 }
 
 .avatar {
@@ -103,18 +104,126 @@ body {
   border: 3px solid var(--color-secondary);
   margin-bottom: 20px;
   box-shadow: var(--color-secondary) 0 0 15px;
-  object-fit: cover;
   z-index: 1;
 }
 
 .content {
   display: none;
   margin-top: 20px;
-  height: 100%;
   width: 100%;
+  height: 100%;
   transition: 0.3s;
+  justify-content: space-between;
 }
 
 .content.active {
-  display: block;
+  display: flex;
+}
+
+.side-links {
+  min-width: 90px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background-color: var(--color-accent);
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.link img {
+  width: 30px;
+  height: 30px;
+  z-index: 2;
+}
+
+.link .label {
+  position: absolute;
+  right: 40px; /* Отступ слева от иконки */
+  opacity: 0;
+  transform: translateX(10px);
+  background-color: var(--color-accent);
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.link:hover .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content2 {
+  width: 100%;
+  text-align: left;
+}
+
+.content2 h2 {
+  font-size: 1.5rem;
+  margin-left: 40px;
+}
+
+.iKnow {
+  width: 45%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  min-width: 90px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  background-color: var(--color-accent2);
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.know {
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--color-secondary);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.know img {
+  flex: 0 0 auto;
+  width: 60px;
+  height: auto;
+  scroll-snap-align: start;
+}
+
+.know::-webkit-scrollbar {
+  height: 6px;
+}
+.know::-webkit-scrollbar-thumb {
+  background: var(--color-accent2);
+  border-radius: 3px;
+}
+.know::-webkit-scrollbar-track {
+  background: transparent;
 }

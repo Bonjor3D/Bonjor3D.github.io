@@ -1,0 +1,81 @@
+:root {
+  --color-text: #E9E9E9;
+  --color-bg: #22222E;
+  --color-secondary: #706F8E;
+  --color-accent: #2b2c45;
+  --color-accent2:rgb(59, 61, 93);
+  --color-muted: #ADA9BA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: var(--color-accent);
+  max-width: 380px;
+  width: 100%;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px var(--color-accent);
+  text-align: center;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--color-secondary);
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--color-muted));
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.contacts a {
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contacts a:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.contacts span {
+  font-style: italic;
+  user-select: none;
+}
